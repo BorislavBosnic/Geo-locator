@@ -1,0 +1,34 @@
+{
+
+    "name": "GeoLocator",
+    "description" : "Shows geo location of any domain",
+    "version": "1.0",
+    "manifest_version": 2,
+	"content_security_policy": "script-src 'self' https://maps.googleapis.com https://maps.gstatic.com; object-src 'self'",
+
+    "browser_action": {
+      "default_popup": "geoLocator.html",
+      "default_icon": "geoLocator.png",
+      "default_title": "Klikni ovdje!"
+    },
+	
+ "commands": {
+      "_execute_browser_action": {
+        "suggested_key": {
+          "default": "Ctrl+Shift+F",
+          "mac": "MacCtrl+Shift+F"
+        },
+        "description": "Opens hello.html"
+      }
+    },
+	
+	"permissions": [
+    "tabs"
+
+  ]
+  
+
+	
+	
+  
+  }
