@@ -47,7 +47,7 @@ chrome.tabs.query({'active': true, 'currentWindow': true}, function (tabs) {
 	resultObject = obj;
 
 	
-  	document.getElementById("response").innerHTML="IP adresa: " + obj.ip + '<br>' +  "Drzava: " + obj.country_name +  '<br>' + "Region: "+ obj.region_name + '<br> '+ "Grad: " + obj.city + '<br>' + "Vremenska zona: " + obj.time_zone;
+  	document.getElementById("response").innerHTML="IP adresa:  ${obj.ip <br>}" +  "Drzava: " + obj.country_name +  '<br>' + "Region: "+ obj.region_name + '<br> '+ "Grad: " + obj.city + '<br>' + "Vremenska zona: " + obj.time_zone;
 
 
 
