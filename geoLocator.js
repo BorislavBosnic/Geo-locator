@@ -32,16 +32,18 @@ marker.setMap(map);
 }
 
 chrome.tabs.query({'active': true, 'currentWindow': true}, function (tabs) {
-  var url = tabs[0].url;
+ /* var url = tabs[0].url;
   var res = url.split("://");
   var domainName = res[1];
   var res2 = domainName.split("/");
-  var domainName2 = res2[0];
-  	document.getElementById("domen").innerHTML=domainName2;
-	if(domainName2 == "newtab")
-		domainName2="";
+  var domainName2 = res2[0];*/
+  var url = new URL(tabs[0].url);
+  var hostname = url.hostname;
+  	document.getElementById("domen").innerHTML=hostname;
+	if(url.hostname == "newtab" || url.protocol == "chrome:")
+		hostname="";
 	
-	var response = httpGet("http://freegeoip.net/json/" + domainName2);
+	var response = httpGet("http://freegeoip.net/json/" + hostname);
 	
 	var obj = JSON.parse(response);
 	resultObject = obj;
